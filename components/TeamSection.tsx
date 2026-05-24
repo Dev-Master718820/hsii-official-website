@@ -36,7 +36,7 @@ const team = [
     role: "Co-CEO | Operations & Business Infrastructure",
     initials: "MW",
     color: "#74b9ff",
-    image: null,
+    image: "/images/team/monte.jpeg",
     bio: "Systems-based researcher and co-architect of HSII™, contributing expertise in somatic efficiency, autonomic state tracking, heart-rate variability mapping, and behavioral systems engineering.",
     fullBio: {
       paragraphs: [

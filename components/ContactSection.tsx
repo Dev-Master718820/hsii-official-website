@@ -125,7 +125,7 @@ export default function ContactSection() {
                   &ldquo;
                 </div>
                 <p className="text-[#a0a0b0] text-sm leading-relaxed italic">
-                  XXXXXXXXXXXXXXXXXXXXXXXXX
+                  HSII™ reframes capacity, safety, resilience, and continuity as design responsibilities — helping organizations identify operational friction, reduce invisible load, and build systems that sustain performance without consuming the people who carry them.
                   {/* &ldquo;The best digital products aren&apos;t built — they&apos;re grown through deep
                   collaboration and a shared obsession with quality.&rdquo; */}
                 </p>
