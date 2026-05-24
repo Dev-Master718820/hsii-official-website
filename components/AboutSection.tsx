@@ -2,40 +2,40 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Zap, Shield, Palette, BarChart3 } from "lucide-react";
+import { ScanSearch, Building2, Users, TrendingUp } from "lucide-react";
 
 const values = [
   {
-    icon: Zap,
-    title: "Performance First",
-    description: "Every millisecond counts. We build for speed from day one, not as an afterthought.",
+    icon: ScanSearch,
+    title: "Operational Analysis",
+    description: "We map the full system before optimizing any part of it — friction is rarely where surface metrics say it is.",
     color: "#ffd166",
   },
   {
-    icon: Palette,
-    title: "Thoughtful Design",
-    description: "Interfaces that delight users while solving real problems with clarity and purpose.",
+    icon: Building2,
+    title: "Enterprise Modernization",
+    description: "7+ years modernizing complex government and enterprise systems — from legacy CRM workflows to AI-assisted infrastructure.",
     color: "#a29bfe",
   },
   {
-    icon: Shield,
-    title: "Built to Last",
-    description: "Solid foundations, clean code, and maintainable architectures that scale with you.",
+    icon: Users,
+    title: "Human Systems Focus",
+    description: "We account for the people sustaining the system — continuity, adaptation load, and hidden operational strain are part of the design.",
     color: "#55efc4",
   },
   {
-    icon: BarChart3,
-    title: "Results Driven",
-    description: "We measure success by outcomes — not deliverables. Your growth is our metric.",
+    icon: TrendingUp,
+    title: "Measurable Outcomes",
+    description: "SOPs, backlog reduction, and response standards that translate directly into operational performance you can see and report on.",
     color: "#fd79a8",
   },
 ];
 
 const stats = [
-  { value: "120+", label: "Projects delivered" },
-  { value: "8", label: "Years of craft" },
-  { value: "40+", label: "Happy clients" },
-  { value: "99%", label: "Satisfaction rate" },
+  { value: "36,000+", label: "Case backlog resolved" },
+  { value: "7+", label: "Years enterprise systems modernization" },
+  { value: "40+", label: "SOPs & operational artifacts" },
+  { value: "24–72hr", label: "Operational response standards maintained" },
 ];
 
 function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -79,7 +79,7 @@ export default function AboutSection() {
             </h2>
             <p className="text-[#a0a0b0] text-lg leading-relaxed">
               HSII — Human Systems Integration & Infrastructure — is a team dedicated to operational
-              clarity and sustainable performance. In partnership with Moore, we design and engineer
+              clarity and sustainable performance. In partnership, we design and engineer
               tools that help organizations understand, diagnose, and improve the systems their
               people depend on every day.
             </p>

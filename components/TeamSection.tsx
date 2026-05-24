@@ -33,12 +33,20 @@ const team = [
   },
   {
     name: "Monte White",
-    role: "Co-CEO & Owner of skitrucks.com",
+    role: "Co-CEO | Operations & Business Infrastructure",
     initials: "MW",
     color: "#74b9ff",
     image: null,
-    bio: "Operator and entrepreneur with deep experience building and scaling real-world infrastructure businesses.",
-    fullBio: null,
+    bio: "Systems-based researcher and co-architect of HSII™, contributing expertise in somatic efficiency, autonomic state tracking, heart-rate variability mapping, and behavioral systems engineering.",
+    fullBio: {
+      paragraphs: [
+        "He provides the biological, measurable, and practical scaffolding that grounds HSII™ in physiology, performance science, and human capacity modeling.",
+        "His work focuses on optimizing human systems through low-drag architecture, coherence engineering, and capacity-safe design — ensuring that intelligence, performance, and growth remain sustainable across cycles.",
+      ],
+      currentWork: [
+        "Owner of skitrucks.com",
+      ],
+    },
   },
   {
     name: "Pavlo Jin",
