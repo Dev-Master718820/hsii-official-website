@@ -44,14 +44,29 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 export default function ContactSection() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSent(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong");
+      }
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -89,7 +104,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm font-medium mb-1">Email us</p>
-                  <p className="text-[#7a7a90] text-sm">hello@hsii.com</p>
+                  <p className="text-[#7a7a90] text-sm">hello@hsii.systems</p>
                 </div>
               </div>
 
@@ -198,6 +213,10 @@ export default function ContactSection() {
                     className="w-full px-4 py-3 rounded-xl bg-[#0d0d1a] border border-[#2a2a3e] text-sm text-[#f0f0f5] placeholder-[#4a4a60] focus:outline-none focus:border-[#6c63ff]/60 transition-colors resize-none"
                   />
                 </div>
+
+                {error && (
+                  <p className="text-sm text-red-400">{error}</p>
+                )}
 
                 <motion.button
                   type="submit"
