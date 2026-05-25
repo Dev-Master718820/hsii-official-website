@@ -8,7 +8,7 @@ import { ChevronDown } from "lucide-react";
 const team = [
   {
     name: "Misty Moore",
-    role: "Co-CEO, HSII",
+    role: "Co-CEO, Human Systems Integration & Infrastructure™ (HSII™) Society’s Backbone™",
     initials: "MM",
     color: "#6c63ff",
     image: "/images/team/misty.png",
@@ -96,7 +96,10 @@ function TeamCard({ person }: { person: (typeof team)[number] }) {
 
   return (
     <div
-      className="group relative rounded-2xl border border-[#2a2a3e] bg-[#0d0d1a] hover:border-[#3a3a5e] transition-colors duration-300 overflow-hidden flex flex-col"
+      className="group relative rounded-2xl border bg-[var(--bg-surface)] transition-colors duration-300 overflow-hidden flex flex-col"
+      style={{ borderColor: "var(--border-color)" }}
+      onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--border-hi)")}
+      onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
     >
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500 pointer-events-none"
@@ -134,7 +137,7 @@ function TeamCard({ person }: { person: (typeof team)[number] }) {
         <p className="text-sm font-medium mb-4" style={{ color: person.color }}>
           {person.role}
         </p>
-        <p className="text-sm text-[#7a7a90] leading-relaxed">{person.bio}</p>
+        <p className="text-sm text-[var(--text-muted)] leading-relaxed">{person.bio}</p>
 
         {/* Expanded bio */}
         <AnimatePresence initial={false}>
@@ -146,19 +149,19 @@ function TeamCard({ person }: { person: (typeof team)[number] }) {
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="overflow-hidden"
             >
-              <div className="pt-5 space-y-4 border-t border-[#2a2a3e] mt-5">
+              <div className="pt-5 space-y-4 border-t mt-5" style={{ borderColor: "var(--border-color)" }}>
                 {person.fullBio.paragraphs.map((p, i) => (
-                  <p key={i} className="text-sm text-[#7a7a90] leading-relaxed">
+                  <p key={i} className="text-sm text-[var(--text-muted)] leading-relaxed">
                     {p}
                   </p>
                 ))}
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-[#a0a0b0] mb-3">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
                     Current work
                   </p>
                   <ul className="space-y-1.5">
                     {person.fullBio.currentWork.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-[#7a7a90]">
+                      <li key={item} className="flex items-start gap-2 text-sm text-[var(--text-muted)]">
                         <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ background: person.color }} />
                         {item}
                       </li>
@@ -205,7 +208,7 @@ export default function TeamSection() {
                 HSII.
               </span>
             </h2>
-            <p className="text-[#a0a0b0] text-lg leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
               A founding team that combines systems thinking, entrepreneurial execution, and deep
               technical craft.
             </p>

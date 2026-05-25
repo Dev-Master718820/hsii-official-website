@@ -46,12 +46,10 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 export default function FrictionMapSection() {
   return (
     <section id="friction-map" className="relative py-32 px-6 overflow-hidden">
-      {/* Background accent */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#6c63ff]/8 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-80 h-80 bg-[#fd79a8]/6 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <FadeUp>
           <div className="max-w-3xl mb-16">
             <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
@@ -63,7 +61,7 @@ export default function FrictionMapSection() {
                 Operational Friction Map™
               </span>
             </h2>
-            <p className="text-[#a0a0b0] text-lg leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
               A diagnostic tool that turns complex operational breakdowns into clear,
               actionable intelligence. Describe the problem — get structured answers in seconds.
             </p>
@@ -74,7 +72,12 @@ export default function FrictionMapSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {features.map((f, i) => (
             <FadeUp key={f.title} delay={i * 0.12}>
-              <div className="group relative p-7 rounded-2xl border border-[#2a2a3e] bg-[#0d0d1a] hover:border-[#3a3a5e] transition-all duration-300 overflow-hidden h-full">
+              <div
+                className="group relative p-7 rounded-2xl border bg-[var(--bg-surface)] transition-all duration-300 overflow-hidden h-full"
+                style={{ borderColor: "var(--border-color)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--border-hi)")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
+              >
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl"
                   style={{ background: f.color }}
@@ -86,7 +89,7 @@ export default function FrictionMapSection() {
                   <f.icon size={22} style={{ color: f.color }} />
                 </div>
                 <h3 className="font-semibold text-base mb-3">{f.title}</h3>
-                <p className="text-sm text-[#7a7a90] leading-relaxed">{f.description}</p>
+                <p className="text-sm text-[var(--text-muted)] leading-relaxed">{f.description}</p>
               </div>
             </FadeUp>
           ))}
@@ -94,13 +97,15 @@ export default function FrictionMapSection() {
 
         {/* CTA banner */}
         <FadeUp delay={0.2}>
-          <div className="relative rounded-2xl border border-[#2a2a3e] bg-[#0d0d1a] overflow-hidden p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            {/* Glow */}
+          <div
+            className="relative rounded-2xl border bg-[var(--bg-surface)] overflow-hidden p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+            style={{ borderColor: "var(--border-color)" }}
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-[#6c63ff]/5 via-transparent to-[#fd79a8]/5 pointer-events-none" />
 
             <div className="relative">
               <p className="text-lg font-semibold mb-1">Ready to map your friction?</p>
-              <p className="text-[#7a7a90] text-sm leading-relaxed max-w-lg">
+              <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-lg">
                 Submit any operational challenge and receive a severity-scored breakdown with
                 recommended action pathways — no setup, no friction.
               </p>

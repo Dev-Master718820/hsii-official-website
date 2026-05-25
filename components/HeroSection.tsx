@@ -56,7 +56,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Bottom vignette */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a0a0f] to-transparent pointer-events-none z-10" />
+      <div className="absolute inset-x-0 bottom-0 h-40 pointer-events-none z-10" style={{ background: "linear-gradient(to top, var(--bg-page), transparent)" }} />
 
       {/* Slide dots */}
       <motion.div

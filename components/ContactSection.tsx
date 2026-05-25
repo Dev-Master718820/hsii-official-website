@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2, CalendarDays } from "lucide-react";
 
 const SocialXIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
@@ -71,7 +71,6 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="relative py-32 px-6 overflow-hidden">
-      {/* BG accent */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#6c63ff]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
@@ -87,10 +86,19 @@ export default function ContactSection() {
                 great together.
               </span>
             </h2>
-            <p className="text-[#a0a0b0] text-lg max-w-xl mx-auto">
+            <p className="text-[var(--text-secondary)] text-lg max-w-xl mx-auto mb-8">
               Whether you have a project in mind or just want to say hello — we&apos;d love to hear
               from you.
             </p>
+            <a
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1MFhJMv4bpopJ7sQu67y6v9JdmeNcisICg2nObR4FJNswY0VNWuS5IxEOWjAdSSGnTHNOvwdXp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-[#6c63ff] text-[#6c63ff] hover:bg-[#6c63ff] hover:text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
+            >
+              <CalendarDays size={17} />
+              Book a Free Consultation
+            </a>
           </div>
         </FadeUp>
 
@@ -98,35 +106,36 @@ export default function ContactSection() {
           {/* Info panel */}
           <FadeUp delay={0.1}>
             <div className="space-y-8">
-              <div className="p-6 rounded-2xl border border-[#2a2a3e] bg-[#0d0d1a] flex items-start gap-4">
+              <div className="p-6 rounded-2xl border bg-[var(--bg-surface)] flex items-start gap-4" style={{ borderColor: "var(--border-color)" }}>
                 <div className="w-10 h-10 rounded-xl bg-[#6c63ff]/15 flex items-center justify-center shrink-0">
                   <Mail size={18} className="text-[#a29bfe]" />
                 </div>
                 <div>
                   <p className="text-sm font-medium mb-1">Email us</p>
-                  <p className="text-[#7a7a90] text-sm">hello@hsii.systems</p>
+                  <p className="text-[var(--text-muted)] text-sm">hello@hsii.systems</p>
                 </div>
               </div>
 
-              <div className="p-6 rounded-2xl border border-[#2a2a3e] bg-[#0d0d1a] flex items-start gap-4">
+              <div className="p-6 rounded-2xl border bg-[var(--bg-surface)] flex items-start gap-4" style={{ borderColor: "var(--border-color)" }}>
                 <div className="w-10 h-10 rounded-xl bg-[#6c63ff]/15 flex items-center justify-center shrink-0">
                   <MapPin size={18} className="text-[#a29bfe]" />
                 </div>
                 <div>
                   <p className="text-sm font-medium mb-1">Location</p>
-                  <p className="text-[#7a7a90] text-sm">Maryland & Utah</p>
+                  <p className="text-[var(--text-muted)] text-sm">Maryland & Utah</p>
                 </div>
               </div>
 
               <div>
-                <p className="text-sm text-[#7a7a90] mb-4">Follow along</p>
+                <p className="text-sm text-[var(--text-muted)] mb-4">Follow along</p>
                 <div className="flex gap-3">
                   {socials.map((s) => (
                     <a
                       key={s.label}
                       href={s.href}
                       aria-label={s.label}
-                      className="w-10 h-10 rounded-xl border border-[#2a2a3e] bg-[#0d0d1a] flex items-center justify-center text-[#7a7a90] hover:text-white hover:border-[#6c63ff]/50 transition-all duration-200"
+                      className="w-10 h-10 rounded-xl border bg-[var(--bg-surface)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:border-[#6c63ff]/50 transition-all duration-200"
+                      style={{ borderColor: "var(--border-color)" }}
                     >
                       <s.Icon />
                     </a>
@@ -135,16 +144,14 @@ export default function ContactSection() {
               </div>
 
               {/* Quote */}
-              <div className="relative p-6 rounded-2xl border border-[#2a2a3e] bg-[#0d0d1a] overflow-hidden">
+              <div className="relative p-6 rounded-2xl border bg-[var(--bg-surface)] overflow-hidden" style={{ borderColor: "var(--border-color)" }}>
                 <div className="absolute top-4 right-4 text-6xl leading-none text-[#6c63ff]/10 font-serif select-none">
                   &ldquo;
                 </div>
-                <p className="text-[#a0a0b0] text-sm leading-relaxed italic">
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed italic">
                   HSII™ reframes capacity, safety, resilience, and continuity as design responsibilities — helping organizations identify operational friction, reduce invisible load, and build systems that sustain performance without consuming the people who carry them.
-                  {/* &ldquo;The best digital products aren&apos;t built — they&apos;re grown through deep
-                  collaboration and a shared obsession with quality.&rdquo; */}
                 </p>
-                <p className="text-xs text-[#6a6a80] mt-3">— Misty Moore, Founder</p>
+                <p className="text-xs text-[var(--text-xmuted)] mt-3">— Misty Moore, Founder</p>
               </div>
             </div>
           </FadeUp>
@@ -165,7 +172,7 @@ export default function ContactSection() {
                   <CheckCircle2 size={48} className="text-[#55efc4]" />
                 </motion.div>
                 <h3 className="text-xl font-semibold">Message sent!</h3>
-                <p className="text-[#7a7a90] text-sm max-w-xs">
+                <p className="text-[var(--text-muted)] text-sm max-w-xs">
                   Thanks for reaching out. We&apos;ll get back to you within 24 hours.
                 </p>
                 <button
@@ -179,38 +186,59 @@ export default function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm text-[#7a7a90] mb-2">Name</label>
+                    <label className="block text-sm text-[var(--text-muted)] mb-2">Name</label>
                     <input
                       type="text"
                       required
                       placeholder="Your name"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#0d0d1a] border border-[#2a2a3e] text-sm text-[#f0f0f5] placeholder-[#4a4a60] focus:outline-none focus:border-[#6c63ff]/60 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors"
+                      style={{
+                        background: "var(--bg-surface)",
+                        borderColor: "var(--border-color)",
+                        color: "var(--text-primary)",
+                      }}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(108,99,255,0.6)")}
+                      onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-[#7a7a90] mb-2">Email</label>
+                    <label className="block text-sm text-[var(--text-muted)] mb-2">Email</label>
                     <input
                       type="email"
                       required
                       placeholder="you@example.com"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#0d0d1a] border border-[#2a2a3e] text-sm text-[#f0f0f5] placeholder-[#4a4a60] focus:outline-none focus:border-[#6c63ff]/60 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors"
+                      style={{
+                        background: "var(--bg-surface)",
+                        borderColor: "var(--border-color)",
+                        color: "var(--text-primary)",
+                      }}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(108,99,255,0.6)")}
+                      onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm text-[#7a7a90] mb-2">Message</label>
+                  <label className="block text-sm text-[var(--text-muted)] mb-2">Message</label>
                   <textarea
                     required
                     rows={6}
                     placeholder="Tell us about your project..."
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#0d0d1a] border border-[#2a2a3e] text-sm text-[#f0f0f5] placeholder-[#4a4a60] focus:outline-none focus:border-[#6c63ff]/60 transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors resize-none"
+                    style={{
+                      background: "var(--bg-surface)",
+                      borderColor: "var(--border-color)",
+                      color: "var(--text-primary)",
+                    }}
+                    onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(108,99,255,0.6)")}
+                    onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
                   />
                 </div>
 

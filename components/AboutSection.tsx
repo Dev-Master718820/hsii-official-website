@@ -59,11 +59,9 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative py-32 px-6">
-      {/* Subtle gradient accent */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#6c63ff]/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <FadeUp>
           <div className="max-w-3xl mb-20">
             <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
@@ -77,7 +75,7 @@ export default function AboutSection() {
                 clarity.
               </span>
             </h2>
-            <p className="text-[#a0a0b0] text-lg leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
               HSII — Human Systems Integration & Infrastructure — is a team dedicated to operational
               clarity and sustainable performance. In partnership, we design and engineer
               tools that help organizations understand, diagnose, and improve the systems their
@@ -90,8 +88,12 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
           {values.map((v, i) => (
             <FadeUp key={v.title} delay={i * 0.1}>
-              <div className="group relative p-6 rounded-2xl border border-[#2a2a3e] bg-[#0d0d1a] hover:border-[#3a3a5e] transition-all duration-300 overflow-hidden">
-                {/* Hover glow */}
+              <div
+                className="group relative p-6 rounded-2xl border bg-[var(--bg-surface)] transition-all duration-300 overflow-hidden"
+                style={{ borderColor: "var(--border-color)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--border-hi)")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
+              >
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl"
                   style={{ background: v.color }}
@@ -103,7 +105,7 @@ export default function AboutSection() {
                   <v.icon size={20} style={{ color: v.color }} />
                 </div>
                 <h3 className="font-semibold text-base mb-2">{v.title}</h3>
-                <p className="text-sm text-[#7a7a90] leading-relaxed">{v.description}</p>
+                <p className="text-sm text-[var(--text-muted)] leading-relaxed">{v.description}</p>
               </div>
             </FadeUp>
           ))}
@@ -112,7 +114,8 @@ export default function AboutSection() {
         {/* Stats */}
         <div
           ref={statsRef}
-          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#2a2a3e] rounded-2xl overflow-hidden"
+          className="grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden"
+          style={{ backgroundColor: "var(--border-color)" }}
         >
           {stats.map((s, i) => (
             <motion.div
@@ -120,16 +123,15 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={statsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-              className="bg-[#0d0d1a] px-8 py-10 flex flex-col gap-1"
+              className="bg-[var(--bg-surface)] px-8 py-10 flex flex-col gap-1"
             >
               <span className="text-4xl font-bold bg-gradient-to-r from-[#6c63ff] to-[#a29bfe] bg-clip-text text-transparent">
                 {s.value}
               </span>
-              <span className="text-sm text-[#7a7a90]">{s.label}</span>
+              <span className="text-sm text-[var(--text-muted)]">{s.label}</span>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

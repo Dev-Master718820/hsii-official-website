@@ -43,3 +43,7 @@ Company created by Misty Moore & Monte White
 Development Collaboration: Pavlo Jin
 
 © 2026 Misty Moore & Monte White & Pavlo Jin
+
+
+
+
