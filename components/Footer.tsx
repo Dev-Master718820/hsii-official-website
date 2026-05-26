@@ -1,4 +1,10 @@
 "use client";
+import Link from "next/link";
+
+const footerLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Use", href: "/terms" },
+];
 
 export default function Footer() {
   return (
@@ -14,14 +20,14 @@ export default function Footer() {
           © {new Date().getFullYear()} Human Systems Integration & Infrastructure™ (HSII™) Society's Backbone™. All rights reserved.
         </p>
         <div className="flex gap-6">
-          {["Privacy", "Terms", "Cookies"].map((item) => (
-            <a
-              key={item}
-              href="#"
+          {footerLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
               className="text-xs text-[var(--text-xmuted)] hover:text-[var(--text-secondary)] transition-colors"
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
         </div>
       </div>

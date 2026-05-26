@@ -7,10 +7,10 @@ import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Team", href: "#team" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Team", href: "/#team" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -36,7 +36,7 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center group">
+        <a href="/" className="flex items-center group">
           <Image
             src="/images/HSII logo.jpeg"
             alt="HSII"
