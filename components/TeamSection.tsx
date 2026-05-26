@@ -74,6 +74,48 @@ const team = [
       ],
     },
   },
+  {
+    name: "Krystal Hatch",
+    role: "Education & Trading",
+    initials: "KH",
+    color: "#fd79a8",
+    image: null,
+    bio: "Driving HSII's education initiatives and trading operations, bridging knowledge-sharing with real-world market strategy.",
+    fullBio: {
+      paragraphs: [
+        "Krystal leads HSII's education and trading verticals, bringing structure and clarity to how the organization teaches, trains, and applies market intelligence.",
+        "Her work spans curriculum development, knowledge transfer, and trading strategy — ensuring that HSII's insights translate into practical, actionable outcomes for partners and stakeholders.",
+      ],
+      currentWork: [
+        "Education & Training Programs",
+        "Trading Strategy",
+        "Curriculum Development",
+        "Knowledge Transfer",
+        "Market Intelligence",
+      ],
+    },
+  },
+  {
+    name: "Jessica Mantel",
+    role: "Marketing",
+    initials: "JM",
+    color: "#ffd166",
+    image: null,
+    bio: "Leading HSII's marketing efforts — shaping brand presence, audience engagement, and the strategic communication of HSII's mission.",
+    fullBio: {
+      paragraphs: [
+        "Jessica drives HSII's marketing strategy, translating complex operational concepts into compelling narratives that resonate with diverse audiences across sectors.",
+        "Her work spans brand development, content strategy, campaign execution, and audience growth — ensuring HSII's mission and tools reach the people and organizations that need them most.",
+      ],
+      currentWork: [
+        "Brand Strategy",
+        "Content & Campaign Marketing",
+        "Audience Engagement",
+        "Strategic Communications",
+        "Social Media & Outreach",
+      ],
+    },
+  },
 ];
 
 function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -82,6 +124,7 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   return (
     <motion.div
       ref={ref}
+      className="h-full"
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
@@ -96,7 +139,7 @@ function TeamCard({ person }: { person: (typeof team)[number] }) {
 
   return (
     <div
-      className="group relative rounded-2xl border bg-[var(--bg-surface)] transition-colors duration-300 overflow-hidden flex flex-col"
+      className="group relative rounded-2xl border bg-[var(--bg-surface)] transition-colors duration-300 overflow-hidden flex flex-col h-full"
       style={{ borderColor: "var(--border-color)" }}
       onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--border-hi)")}
       onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
@@ -215,7 +258,7 @@ export default function TeamSection() {
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {team.map((person, i) => (
             <FadeUp key={person.name} delay={i * 0.12}>
               <TeamCard person={person} />
