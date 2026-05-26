@@ -123,7 +123,7 @@ const team = [
     },
   },
   {
-    name: "Jessica Mantel",
+    name: "Jessica Mantell",
     role: "Marketing",
     initials: "JM",
     color: "#ffd166",
