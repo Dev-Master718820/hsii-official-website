@@ -3,6 +3,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ScanSearch, Gauge, ArrowRightCircle, ExternalLink } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const FrictionOrb = dynamic(() => import("@/components/three/FrictionOrb"), { ssr: false });
 
 const features = [
   {
@@ -51,20 +54,28 @@ export default function FrictionMapSection() {
 
       <div className="max-w-7xl mx-auto">
         <FadeUp>
-          <div className="max-w-3xl mb-16">
-            <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
-              HSII™ Operational Intelligence
-            </p>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-              Introducing the{" "}
-              <span className="bg-gradient-to-r from-[#6c63ff] via-[#a29bfe] to-[#fd79a8] bg-clip-text text-transparent">
-                Operational Friction Map™
-              </span>
-            </h2>
-            <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-              A diagnostic tool that turns complex operational breakdowns into clear,
-              actionable intelligence. Describe the problem — get structured answers in seconds.
-            </p>
+          <div className="flex flex-col lg:flex-row items-center gap-10 mb-16">
+            {/* Text */}
+            <div className="flex-1 max-w-2xl">
+              <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
+                HSII™ Operational Intelligence
+              </p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
+                Introducing the{" "}
+                <span className="bg-gradient-to-r from-[#6c63ff] via-[#a29bfe] to-[#fd79a8] bg-clip-text text-transparent">
+                  Operational Friction Map™
+                </span>
+              </h2>
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
+                A diagnostic tool that turns complex operational breakdowns into clear,
+                actionable intelligence. Describe the problem — get structured answers in seconds.
+              </p>
+            </div>
+
+            {/* 3D Orb */}
+            <div className="w-full lg:w-[420px] h-[340px] lg:h-[420px] shrink-0">
+              <FrictionOrb />
+            </div>
           </div>
         </FadeUp>
 

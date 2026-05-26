@@ -3,6 +3,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ScanSearch, Building2, Users, TrendingUp } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const AboutGeometry = dynamic(() => import("@/components/three/AboutGeometry"), { ssr: false });
 
 const values = [
   {
@@ -59,9 +62,12 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative py-32 px-6">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#6c63ff]/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* 3D Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <AboutGeometry />
+      </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <FadeUp>
           <div className="max-w-3xl mb-20">
             <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">

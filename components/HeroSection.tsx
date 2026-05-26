@@ -4,6 +4,9 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useRef, useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const HeroCanvas = dynamic(() => import("@/components/three/HeroCanvas"), { ssr: false });
 
 const slides = [
   { src: "/images/landings/img1.jpeg", alt: "HSII — Human Systems Integration & Infrastructure" },
@@ -32,6 +35,11 @@ export default function HeroSection() {
       ref={ref}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* 3D Background */}
+      <div className="absolute inset-0 z-0">
+        <HeroCanvas />
+      </div>
+
       {/* Slideshow */}
       <motion.div style={{ scale }} className="absolute inset-0">
         <AnimatePresence mode="sync">
