@@ -56,7 +56,7 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 export default function BusinessModelSection() {
   return (
-    <section className="relative py-28 px-6 overflow-hidden" style={{ backgroundColor: "var(--bg-page)" }}>
+    <section id="what-we-do" className="relative py-28 px-6 overflow-hidden" style={{ backgroundColor: "var(--bg-page)" }}>
       {/* Subtle background accent */}
       <div
         className="absolute inset-0 pointer-events-none"
