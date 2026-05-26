@@ -6,7 +6,7 @@ import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 
 const slides = [
-  { src: "/images/landings/img1.jpeg", alt: "HSII — Human Systems Integration & Infrastructure" },
+  { src: "/images/landings/img1.jpeg", alt: "Human Systems Integration & Infrastructure™ (HSII™) Society's Backbone™" },
   { src: "/images/landings/img2.jpeg", alt: "Work is Performance. Practice is Power. Progress is Progress." },
   { src: "/images/landings/img3.jpeg", alt: "Collapse is not Mystery. Collapse is Mathematics." },
 ];

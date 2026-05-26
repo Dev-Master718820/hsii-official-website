@@ -8,10 +8,10 @@ export default function Footer() {
           <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#6c63ff] to-[#a29bfe] flex items-center justify-center">
             <img src="/images/HSII logo.jpeg" alt="HSII logo" />
           </div>
-          <span className="text-sm font-semibold">HSII</span>
+          <span className="text-sm font-semibold">HSII™</span>
         </div>
         <p className="text-xs text-[var(--text-xmuted)]">
-          © {new Date().getFullYear()} Human Systems Integration & Infrastructure. All rights reserved.
+          © {new Date().getFullYear()} Human Systems Integration & Infrastructure™ (HSII™) Society's Backbone™. All rights reserved.
         </p>
         <div className="flex gap-6">
           {["Privacy", "Terms", "Cookies"].map((item) => (

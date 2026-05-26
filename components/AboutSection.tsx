@@ -71,7 +71,7 @@ export default function AboutSection() {
         <FadeUp>
           <div className="max-w-3xl mb-20">
             <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
-              About HSII
+              About HSII™
             </p>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
               Built for human systems,
@@ -82,10 +82,10 @@ export default function AboutSection() {
               </span>
             </h2>
             <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-              HSII — Human Systems Integration & Infrastructure — is a team dedicated to operational
-              clarity and sustainable performance. In partnership, we design and engineer
-              tools that help organizations understand, diagnose, and improve the systems their
-              people depend on every day.
+              Human Systems Integration & Infrastructure™ (HSII™) Society's Backbone™ is a team
+              dedicated to operational clarity and sustainable performance. In partnership, we design
+              and engineer tools that help organizations understand, diagnose, and improve the systems
+              their people depend on every day.
             </p>
           </div>
         </FadeUp>

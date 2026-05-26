@@ -10,8 +10,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "HSII",
-  description: "Official Website of Human Systems Integration & Infrastructure.",
+  title: "HSII™ — Society's Backbone™",
+  description: "Official Website of Human Systems Integration & Infrastructure™ (HSII™) Society's Backbone™.",
 };
 
 export default function RootLayout({

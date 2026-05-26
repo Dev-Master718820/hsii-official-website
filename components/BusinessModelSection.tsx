@@ -1,0 +1,136 @@
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Search, RefreshCw, Cpu, GraduationCap } from "lucide-react";
+
+const steps = [
+  {
+    number: "01",
+    icon: Search,
+    title: "Operational Analysis & Audit",
+    description:
+      "We identify where companies have workflow problems, backlog, hidden load, broken processes, or AI/system gaps.",
+    color: "#6c63ff",
+  },
+  {
+    number: "02",
+    icon: RefreshCw,
+    title: "Process Redesign",
+    description:
+      "We redesign the workflow so the business can run better and stop wasting time, money, and human effort.",
+    color: "#a29bfe",
+  },
+  {
+    number: "03",
+    icon: Cpu,
+    title: "AI + Software Development",
+    description:
+      "We lead the technical build: apps, automations, AI tools, dashboards, integrations, and systems that support the redesigned process.",
+    color: "#74b9ff",
+  },
+  {
+    number: "04",
+    icon: GraduationCap,
+    title: "Training & Adoption",
+    description:
+      "We train the team so the new system is actually used and the knowledge does not stay trapped in one person.",
+    color: "#55efc4",
+  },
+];
+
+function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 28 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export default function BusinessModelSection() {
+  return (
+    <section className="relative py-28 px-6 overflow-hidden" style={{ backgroundColor: "var(--bg-page)" }}>
+      {/* Subtle background accent */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(108,99,255,0.07) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+
+        {/* Explainer + Signature */}
+        <FadeUp>
+          <div className="max-w-3xl mb-20">
+            <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
+              What We Do
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+              We help organizations{" "}
+              <span className="bg-gradient-to-r from-[#6c63ff] to-[#a29bfe] bg-clip-text text-transparent">
+                reduce operational friction
+              </span>{" "}
+              and build systems that sustain performance, continuity, and the people carrying the load.
+            </h2>
+
+            {/* Investor signature */}
+            <div
+              className="mt-8 pl-5 border-l-2 border-[#6c63ff]/40"
+            >
+              <p className="text-[var(--text-secondary)] text-base font-medium">Investor name</p>
+              <p className="text-[var(--text-muted)] text-sm mt-0.5">
+                investor sign
+              </p>
+            </div>
+          </div>
+        </FadeUp>
+
+        {/* Business model steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            return (
+              <FadeUp key={step.number} delay={i * 0.10}>
+                <div
+                  className="group relative p-7 rounded-2xl border bg-[var(--bg-surface)] hover:border-[#6c63ff]/40 transition-all duration-300 overflow-hidden h-full"
+                  style={{ borderColor: "var(--border-color)" }}
+                >
+                  {/* Step number watermark */}
+                  <span
+                    className="absolute top-4 right-5 text-6xl font-black select-none pointer-events-none transition-opacity duration-300 group-hover:opacity-20"
+                    style={{ color: step.color, opacity: 0.08, lineHeight: 1 }}
+                  >
+                    {step.number}
+                  </span>
+
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: `${step.color}18` }}
+                  >
+                    <Icon size={20} style={{ color: step.color }} />
+                  </div>
+
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+                    {step.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {step.description}
+                  </p>
+                </div>
+              </FadeUp>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
