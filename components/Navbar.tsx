@@ -71,12 +71,19 @@ export default function Navbar() {
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
           </button>
 
-          {/* CTA */}
+          {/* CTAs */}
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#6c63ff] hover:bg-[#7c74ff] text-white text-sm font-medium transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
           >
             Get in touch
+          </a>
+          <a
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1MFhJMv4bpopJ7sQu67y6v9JdmeNcisICg2nObR4FJNswY0VNWuS5IxEOWjAdSSGnTHNOvwdXp"
+            target="_blank"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#6c63ff] text-[#6c63ff] hover:bg-[#6c63ff]/10 text-sm font-medium transition-all duration-200"
+          >
+            Book a free consultation
           </a>
         </div>
 
@@ -129,6 +136,15 @@ export default function Navbar() {
                   className="inline-flex px-4 py-2 rounded-lg bg-[#6c63ff] text-white text-sm font-medium"
                 >
                   Get in touch
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1MFhJMv4bpopJ7sQu67y6v9JdmeNcisICg2nObR4FJNswY0VNWuS5IxEOWjAdSSGnTHNOvwdXp"
+                  onClick={() => setMobileOpen(false)}
+                  className="inline-flex px-4 py-2 rounded-lg border border-[#6c63ff] text-[#6c63ff] text-sm font-medium"
+                >
+                  Book a free consultation
                 </a>
               </li>
             </ul>
