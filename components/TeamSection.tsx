@@ -1,14 +1,15 @@
 "use client";
 
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { X } from "lucide-react";
 
 const team = [
   {
     name: "Misty Moore",
-    role: "Co-CEO, Human Systems Integration & Infrastructure™ (HSII™) Society’s Backbone™",
+    role: "Co-CEO, Human Systems Integration & Infrastructure™ (HSII™) Society's Backbone™",
     initials: "MM",
     color: "#6c63ff",
     image: "/images/team/misty.png",
@@ -118,25 +119,129 @@ const team = [
   },
 ];
 
-function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  return (
+type Person = (typeof team)[number];
+
+/* ── Bio Modal ──────────────────────────────────────────────────── */
+function BioModal({ person, onClose }: { person: Person; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return createPortal(
     <motion.div
-      ref={ref}
-      className="h-full"
-      initial={{ opacity: 0, y: 40 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      onClick={onClose}
     >
-      {children}
-    </motion.div>
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+
+      {/* Modal */}
+      <motion.div
+        className="relative w-full max-w-xl max-h-[88vh] overflow-y-auto rounded-2xl border bg-[var(--bg-surface)] shadow-2xl"
+        style={{ borderColor: `${person.color}44` }}
+        initial={{ scale: 0.94, opacity: 0, y: 16 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.94, opacity: 0, y: 16 }}
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Accent glow */}
+        <div
+          className="absolute top-0 left-0 right-0 h-px rounded-t-2xl"
+          style={{ background: `linear-gradient(to right, transparent, ${person.color}88, transparent)` }}
+        />
+
+        <div className="p-7">
+          {/* Close */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-1.5 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-white/5 transition-colors"
+          >
+            <X size={18} />
+          </button>
+
+          {/* Header */}
+          <div className="flex items-center gap-5 mb-7 pr-8">
+            {person.image ? (
+              <div
+                className="w-16 h-16 rounded-2xl overflow-hidden shrink-0"
+                style={{ boxShadow: `0 0 24px ${person.color}33` }}
+              >
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            ) : (
+              <div
+                className="w-16 h-16 rounded-2xl flex items-center justify-center text-white font-bold text-lg shrink-0"
+                style={{
+                  background: `linear-gradient(135deg, ${person.color}, ${person.color}66)`,
+                  boxShadow: `0 0 24px ${person.color}22`,
+                }}
+              >
+                {person.initials}
+              </div>
+            )}
+            <div>
+              <h3 className="text-xl font-bold mb-1">{person.name}</h3>
+              <p className="text-sm font-medium leading-snug" style={{ color: person.color }}>
+                {person.role}
+              </p>
+            </div>
+          </div>
+
+          {/* Bio paragraphs */}
+          <div className="space-y-4 mb-7">
+            {person.fullBio.paragraphs.map((p, i) => (
+              <p key={i} className="text-sm text-[var(--text-muted)] leading-relaxed">
+                {p}
+              </p>
+            ))}
+          </div>
+
+          {/* Current work */}
+          <div
+            className="rounded-xl border p-5"
+            style={{ borderColor: "var(--border-color)", background: "var(--bg-page)" }}
+          >
+            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-4">
+              Current work
+            </p>
+            <ul className="space-y-2.5">
+              {person.fullBio.currentWork.map((item) => (
+                <li key={item} className="flex items-center gap-3 text-sm text-[var(--text-muted)]">
+                  <span
+                    className="w-1.5 h-1.5 rounded-full shrink-0"
+                    style={{ background: person.color }}
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>,
+    document.body
   );
 }
 
-function TeamCard({ person }: { person: (typeof team)[number] }) {
-  const [expanded, setExpanded] = useState(false);
-
+/* ── Team Card ──────────────────────────────────────────────────── */
+function TeamCard({ person, onOpen }: { person: Person; onOpen: () => void }) {
   return (
     <div
       className="group relative rounded-2xl border bg-[var(--bg-surface)] transition-colors duration-300 overflow-hidden flex flex-col h-full"
@@ -177,64 +282,57 @@ function TeamCard({ person }: { person: (typeof team)[number] }) {
         )}
 
         <h3 className="text-lg font-semibold mb-1">{person.name}</h3>
-        <p className="text-sm font-medium mb-4" style={{ color: person.color }}>
+        <p className="text-sm font-medium mb-4 leading-snug" style={{ color: person.color }}>
           {person.role}
         </p>
-        <p className="text-sm text-[var(--text-muted)] leading-relaxed">{person.bio}</p>
+        <p className="text-sm text-[var(--text-muted)] leading-relaxed flex-1">{person.bio}</p>
 
-        {/* Expanded bio */}
-        <AnimatePresence initial={false}>
-          {expanded && person.fullBio && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="overflow-hidden"
-            >
-              <div className="pt-5 space-y-4 border-t mt-5" style={{ borderColor: "var(--border-color)" }}>
-                {person.fullBio.paragraphs.map((p, i) => (
-                  <p key={i} className="text-sm text-[var(--text-muted)] leading-relaxed">
-                    {p}
-                  </p>
-                ))}
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-3">
-                    Current work
-                  </p>
-                  <ul className="space-y-1.5">
-                    {person.fullBio.currentWork.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-[var(--text-muted)]">
-                        <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ background: person.color }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Expand toggle */}
-        {person.fullBio && (
-          <button
-            onClick={() => setExpanded((v) => !v)}
-            className="mt-5 flex items-center gap-1.5 text-xs font-medium transition-colors duration-200 self-start"
-            style={{ color: person.color }}
-          >
-            {expanded ? "Show less" : "Read full bio"}
-            <motion.span animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.3 }}>
-              <ChevronDown size={14} />
-            </motion.span>
-          </button>
-        )}
+        {/* View full bio button */}
+        <button
+          onClick={onOpen}
+          className="mt-6 self-start text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-lg border transition-all duration-200 hover:scale-[1.03]"
+          style={{
+            color: person.color,
+            borderColor: `${person.color}40`,
+            background: `${person.color}0d`,
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.background = `${person.color}1a`;
+            (e.currentTarget as HTMLButtonElement).style.borderColor = `${person.color}80`;
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLButtonElement).style.background = `${person.color}0d`;
+            (e.currentTarget as HTMLButtonElement).style.borderColor = `${person.color}40`;
+          }}
+        >
+          View full bio
+        </button>
       </div>
     </div>
   );
 }
 
+/* ── FadeUp ─────────────────────────────────────────────────────── */
+function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  return (
+    <motion.div
+      ref={ref}
+      className="h-full"
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ── Section ────────────────────────────────────────────────────── */
 export default function TeamSection() {
+  const [selected, setSelected] = useState<Person | null>(null);
+
   return (
     <section id="team" className="relative py-32 px-6 overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-[#6c63ff]/8 rounded-full blur-[100px] pointer-events-none" />
@@ -258,14 +356,20 @@ export default function TeamSection() {
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
           {team.map((person, i) => (
             <FadeUp key={person.name} delay={i * 0.12}>
-              <TeamCard person={person} />
+              <TeamCard person={person} onOpen={() => setSelected(person)} />
             </FadeUp>
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selected && (
+          <BioModal person={selected} onClose={() => setSelected(null)} />
+        )}
+      </AnimatePresence>
     </section>
   );
 }
