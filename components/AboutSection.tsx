@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { ScanSearch, Building2, Users, TrendingUp } from "lucide-react";
 import dynamic from "next/dynamic";
 
-const AboutGeometry = dynamic(() => import("@/components/three/AboutGeometry"), { ssr: false });
+const HeroCanvas = dynamic(() => import("@/components/three/HeroCanvas"), { ssr: false });
 
 const values = [
   {
@@ -64,7 +64,7 @@ export default function AboutSection() {
     <section id="about" className="relative py-32 px-6">
       {/* 3D Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <AboutGeometry />
+        <HeroCanvas />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
