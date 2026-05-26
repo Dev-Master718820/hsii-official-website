@@ -10,7 +10,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "HSII™ — Society's Backbone™",
+  title: "HSII-SB",
   description: "Official Website of Human Systems Integration & Infrastructure™ (HSII™) Society's Backbone™.",
 };
 

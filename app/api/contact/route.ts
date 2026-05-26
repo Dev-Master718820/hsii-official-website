@@ -20,7 +20,7 @@ export async function POST(req: Request) {
 
   try {
     await transporter.sendMail({
-      from: `"HSII Contact Form" <${process.env.GMAIL_USER}>`,
+      from: `"HSII-SB Contact Form" <${process.env.GMAIL_USER}>`,
       to: "hello@hsii.systems",
       replyTo: email,
       subject: `New message from ${name}`,

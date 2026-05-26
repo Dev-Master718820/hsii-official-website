@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Authorship/Copyright
 
-HSII Official Website
+HSII-SB Official Website
 
 Company created by Misty Moore & Monte White
 Development Collaboration: Pavlo Jin

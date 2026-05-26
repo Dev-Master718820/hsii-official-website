@@ -58,7 +58,7 @@ export default function FrictionMapSection() {
             {/* Text */}
             <div className="flex-1 max-w-2xl">
               <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
-                HSII™ Operational Intelligence
+                HSII-SB Operational Intelligence
               </p>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
                 Introducing the{" "}

@@ -71,7 +71,7 @@ export default function AboutSection() {
         <FadeUp>
           <div className="max-w-3xl mb-20">
             <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
-              About HSII™
+              About HSII-SB
             </p>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
               Built for human systems,

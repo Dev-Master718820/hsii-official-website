@@ -149,7 +149,7 @@ export default function ContactSection() {
                   &ldquo;
                 </div>
                 <p className="text-[var(--text-secondary)] text-sm leading-relaxed italic">
-                  HSII™ reframes capacity, safety, resilience, and continuity as design responsibilities — helping organizations identify operational friction, reduce invisible load, and build systems that sustain performance without consuming the people who carry them.
+                  HSII-SB reframes capacity, safety, resilience, and continuity as design responsibilities — helping organizations identify operational friction, reduce invisible load, and build systems that sustain performance without consuming the people who carry them.
                 </p>
                 <p className="text-xs text-[var(--text-xmuted)] mt-3">— Misty Moore, Founder</p>
               </div>

@@ -38,10 +38,10 @@ const team = [
     initials: "MW",
     color: "#74b9ff",
     image: "/images/team/monte.jpeg",
-    bio: "Systems-based researcher and co-architect of HSII™, contributing expertise in somatic efficiency, autonomic state tracking, heart-rate variability mapping, and behavioral systems engineering.",
+    bio: "Systems-based researcher and co-architect of HSII-SB, contributing expertise in somatic efficiency, autonomic state tracking, heart-rate variability mapping, and behavioral systems engineering.",
     fullBio: {
       paragraphs: [
-        "He provides the biological, measurable, and practical scaffolding that grounds HSII™ in physiology, performance science, and human capacity modeling.",
+        "He provides the biological, measurable, and practical scaffolding that grounds HSII-SB in physiology, performance science, and human capacity modeling.",
         "His work focuses on optimizing human systems through low-drag architecture, coherence engineering, and capacity-safe design — ensuring that intelligence, performance, and growth remain sustainable across cycles.",
       ],
       currentWork: [
@@ -60,7 +60,7 @@ const team = [
       paragraphs: [
         "His work centers on building practical infrastructure that improves usability, reduces operational friction, and supports long-term system maintainability. He has experience across frontend and backend development, enterprise workflows, API integrations, database architecture, and modern web technologies.",
         "Pavlo works closely with operational stakeholders to rapidly translate complex requirements into functional, maintainable systems. His engineering approach emphasizes clarity, scalability, adaptability, and real-world operational performance.",
-        "Current projects include operational analysis tooling, AI-assisted workflow systems, enterprise modernization initiatives, and the development of the Operational Friction Map™ platform as part of Human Systems Integration & Infrastructure (HSII™).",
+        "Current projects include operational analysis tooling, AI-assisted workflow systems, enterprise modernization initiatives, and the development of the Operational Friction Map™ platform as part of Human Systems Integration & Infrastructure (HSII™) Society's Backbone™.",
       ],
       currentWork: [
         "Full Stack Development",
@@ -128,11 +128,11 @@ const team = [
     initials: "JM",
     color: "#ffd166",
     image: null,
-    bio: "Leading HSII's marketing efforts — shaping brand presence, audience engagement, and the strategic communication of HSII's mission.",
+    bio: "Leading HSII-SB's marketing efforts — shaping brand presence, audience engagement, and the strategic communication of HSII's mission.",
     fullBio: {
       paragraphs: [
-        "Jessica drives HSII's marketing strategy, translating complex operational concepts into compelling narratives that resonate with diverse audiences across sectors.",
-        "Her work spans brand development, content strategy, campaign execution, and audience growth — ensuring HSII's mission and tools reach the people and organizations that need them most.",
+        "Jessica drives HSII-SB's marketing strategy, translating complex operational concepts into compelling narratives that resonate with diverse audiences across sectors.",
+        "Her work spans brand development, content strategy, campaign execution, and audience growth — ensuring HSII-SB's mission and tools reach the people and organizations that need them most.",
       ],
       currentWork: [
         "Brand Strategy",
@@ -372,7 +372,7 @@ export default function TeamSection() {
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-4">
               The people behind{" "}
               <span className="bg-gradient-to-r from-[#6c63ff] to-[#a29bfe] bg-clip-text text-transparent">
-                HSII.
+                HSII-SB.
               </span>
             </h2>
             <p className="text-[var(--text-secondary)] text-lg leading-relaxed">

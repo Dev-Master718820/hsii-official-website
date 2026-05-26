@@ -36,10 +36,10 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center group">
+        <a href="#home" className="flex items-center group">
           <Image
             src="/images/HSII logo.jpeg"
-            alt="HSII"
+            alt="HSII-SB logo"
             width={30}
             height={30}
             className="object-contain"
@@ -73,7 +73,7 @@ export default function Navbar() {
 
           {/* CTAs */}
           <a
-            href="#contact"
+            href="/#contact"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#6c63ff] hover:bg-[#7c74ff] text-white text-sm font-medium transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
           >
             Get in touch
@@ -131,7 +131,7 @@ export default function Navbar() {
               ))}
               <li>
                 <a
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setMobileOpen(false)}
                   className="inline-flex px-4 py-2 rounded-lg bg-[#6c63ff] text-white text-sm font-medium"
                 >
