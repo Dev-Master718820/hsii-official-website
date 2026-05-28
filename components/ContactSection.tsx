@@ -98,7 +98,7 @@ export default function ContactSection() {
                 className="flex flex-1 items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-[#6c63ff] text-[#6c63ff] hover:bg-[#6c63ff] hover:text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
               >
                 <CalendarDays size={17} />
-                30 min Operational Analysis Consultation
+                Free 30 min Operational Analysis Consultation
               </a>
               <a
                 href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1MFhJMv4bpopJ7sQu67y6v9JdmeNcisICg2nObR4FJNswY0VNWuS5IxEOWjAdSSGnTHNOvwdXp"
@@ -107,7 +107,7 @@ export default function ContactSection() {
                 className="flex flex-1 items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-[#6c63ff] text-[#6c63ff] hover:bg-[#6c63ff] hover:text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
               >
                 <CalendarDays size={17} />
-                30 min Training Evaluation
+                Free 30 min Training Evaluation
               </a>
             </div>
           </div>
