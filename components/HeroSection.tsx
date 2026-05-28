@@ -14,8 +14,8 @@ const slides = [
 const INTERVAL = 5500;
 
 export default function HeroSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const imageRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: imageRef, offset: ["start start", "end start"] });
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
@@ -27,107 +27,105 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section
-      id="home"
-      ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
+    <section id="home" className="overflow-hidden">
       {/* Slideshow */}
-      <motion.div style={{ scale }} className="absolute inset-0">
-        <AnimatePresence mode="sync">
-          <motion.div
-            key={current}
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-          >
-            <Image
-              src={slides[current].src}
-              alt={slides[current].alt}
-              fill
-              priority={current === 0}
-              sizes="100vw"
-              style={{ objectFit: "contain", objectPosition: "center" }}
-            />
-          </motion.div>
-        </AnimatePresence>
-      </motion.div>
+      <div ref={imageRef} className="relative h-screen overflow-hidden">
+        <motion.div style={{ scale }} className="absolute inset-0">
+          <AnimatePresence mode="sync">
+            <motion.div
+              key={current}
+              className="absolute inset-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            >
+              <Image
+                src={slides[current].src}
+                alt={slides[current].alt}
+                fill
+                priority={current === 0}
+                sizes="100vw"
+                style={{ objectFit: "contain", objectPosition: "center" }}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
 
-      {/* Dark overlay for text legibility */}
-      <div className="absolute inset-0 z-[5] bg-gradient-to-b from-black/65 via-black/50 to-black/15 pointer-events-none" />
+        {/* Bottom vignette */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-40 pointer-events-none z-10"
+          style={{ background: "linear-gradient(to top, var(--bg-page), transparent)" }}
+        />
 
-      {/* Hero text */}
+        {/* Slide dots */}
+        <motion.div
+          style={{ opacity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          <div className="flex items-center gap-2">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className="transition-all duration-300"
+              >
+                <span
+                  className={`block rounded-full transition-all duration-300 ${
+                    i === current
+                      ? "w-6 h-1.5 bg-white"
+                      : "w-1.5 h-1.5 bg-white/30 hover:bg-white/60"
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+          <div className="flex flex-col items-center gap-1 text-white/40 text-xs">
+            <span className="uppercase tracking-widest">scroll</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowDown size={16} />
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Hero text — below the images */}
       <motion.div
-        className="relative z-20 text-center px-6 max-w-4xl mx-auto"
+        className="px-6 py-24 max-w-4xl mx-auto text-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
       >
-        <p className="text-white/55 text-sm font-semibold uppercase tracking-widest mb-6">
+        <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-6">
           Operational Intelligence
         </p>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight mb-6">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6">
           Where is your system{" "}
           <span className="bg-gradient-to-r from-[#6c63ff] via-[#a29bfe] to-[#fd79a8] bg-clip-text text-transparent">
             breaking?
           </span>
         </h1>
-        <p className="text-white/75 text-lg md:text-xl leading-relaxed mb-4 max-w-2xl mx-auto">
+        <p className="text-[var(--text-secondary)] text-lg md:text-xl leading-relaxed mb-4 max-w-2xl mx-auto">
           Map operational bottlenecks, workflow failures, hidden load, and continuity risks.
         </p>
-        <p className="text-white/50 text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+        <p className="text-[var(--text-muted)] text-base leading-relaxed mb-10 max-w-2xl mx-auto">
           Identify operational friction, reduce invisible load, and build systems that sustain
           performance without consuming the people who carry them.
         </p>
         <a
-          href="#friction-map"
+          href="https://operational-friction-map-service.vercel.app/"
           className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#6c63ff] hover:bg-[#7c74ff] text-white font-semibold text-base transition-all duration-200 hover:shadow-2xl hover:shadow-[#6c63ff]/40 hover:-translate-y-0.5"
         >
           Run the Operational Friction Map™
           <ArrowRight size={18} />
         </a>
-      </motion.div>
-
-      {/* Bottom vignette */}
-      <div className="absolute inset-x-0 bottom-0 h-40 pointer-events-none z-10" style={{ background: "linear-gradient(to top, var(--bg-page), transparent)" }} />
-
-      {/* Slide dots */}
-      <motion.div
-        style={{ opacity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-      >
-        <div className="flex items-center gap-2">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              aria-label={`Go to slide ${i + 1}`}
-              className="transition-all duration-300"
-            >
-              <span
-                className={`block rounded-full transition-all duration-300 ${
-                  i === current
-                    ? "w-6 h-1.5 bg-white"
-                    : "w-1.5 h-1.5 bg-white/30 hover:bg-white/60"
-                }`}
-              />
-            </button>
-          ))}
-        </div>
-        <div className="flex flex-col items-center gap-1 text-white/40 text-xs">
-          <span className="uppercase tracking-widest">scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ArrowDown size={16} />
-          </motion.div>
-        </div>
       </motion.div>
     </section>
   );

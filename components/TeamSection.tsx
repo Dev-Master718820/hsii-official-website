@@ -77,7 +77,7 @@ const team = [
   },
   {
     name: "Krystal Hatch",
-    role: "Education & Trading",
+    role: "Education & Training",
     initials: "KH",
     color: "#fd79a8",
     image: "/images/team/krystal.jpeg",
@@ -122,27 +122,27 @@ const team = [
       ],
     },
   },
-  {
-    name: "Jessica Mantell",
-    role: "Marketing",
-    initials: "JM",
-    color: "#ffd166",
-    image: null,
-    bio: "Leading HSII-SB's marketing efforts — shaping brand presence, audience engagement, and the strategic communication of HSII's mission.",
-    fullBio: {
-      paragraphs: [
-        "Jessica drives HSII-SB's marketing strategy, translating complex operational concepts into compelling narratives that resonate with diverse audiences across sectors.",
-        "Her work spans brand development, content strategy, campaign execution, and audience growth — ensuring HSII-SB's mission and tools reach the people and organizations that need them most.",
-      ],
-      currentWork: [
-        "Brand Strategy",
-        "Content & Campaign Marketing",
-        "Audience Engagement",
-        "Strategic Communications",
-        "Social Media & Outreach",
-      ],
-    },
-  },
+  // {
+  //   name: "Jessica Mantell",
+  //   role: "Marketing",
+  //   initials: "JM",
+  //   color: "#ffd166",
+  //   image: null,
+  //   bio: "Leading HSII-SB's marketing efforts — shaping brand presence, audience engagement, and the strategic communication of HSII's mission.",
+  //   fullBio: {
+  //     paragraphs: [
+  //       "Jessica drives HSII-SB's marketing strategy, translating complex operational concepts into compelling narratives that resonate with diverse audiences across sectors.",
+  //       "Her work spans brand development, content strategy, campaign execution, and audience growth — ensuring HSII-SB's mission and tools reach the people and organizations that need them most.",
+  //     ],
+  //     currentWork: [
+  //       "Brand Strategy",
+  //       "Content & Campaign Marketing",
+  //       "Audience Engagement",
+  //       "Strategic Communications",
+  //       "Social Media & Outreach",
+  //     ],
+  //   },
+  // },
 ];
 
 type Person = (typeof team)[number];
