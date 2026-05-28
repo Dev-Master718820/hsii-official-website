@@ -34,12 +34,6 @@ const values = [
   },
 ];
 
-const stats = [
-  { value: "36,000+", label: "Case backlog resolved" },
-  { value: "7+", label: "Years enterprise systems modernization" },
-  { value: "40+", label: "SOPs & operational artifacts" },
-  { value: "24–72hr", label: "Operational response standards maintained" },
-];
 
 function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -57,8 +51,6 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 }
 
 export default function AboutSection() {
-  const statsRef = useRef<HTMLDivElement>(null);
-  const statsInView = useInView(statsRef, { once: true, margin: "-80px" });
 
   return (
     <section id="about" className="relative py-32 px-6">
@@ -117,27 +109,6 @@ export default function AboutSection() {
           ))}
         </div>
 
-        {/* Stats */}
-        <div
-          ref={statsRef}
-          className="grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden"
-          style={{ backgroundColor: "var(--border-color)" }}
-        >
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={statsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-              className="bg-[var(--bg-surface)] px-8 py-10 flex flex-col gap-1"
-            >
-              <span className="text-4xl font-bold bg-gradient-to-r from-[#6c63ff] to-[#a29bfe] bg-clip-text text-transparent">
-                {s.value}
-              </span>
-              <span className="text-sm text-[var(--text-muted)]">{s.label}</span>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

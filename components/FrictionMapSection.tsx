@@ -115,10 +115,9 @@ export default function FrictionMapSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#6c63ff]/5 via-transparent to-[#fd79a8]/5 pointer-events-none" />
 
             <div className="relative">
-              <p className="text-lg font-semibold mb-1">Ready to map your friction?</p>
+              <p className="text-lg font-semibold mb-1">Where is your system breaking?</p>
               <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-lg">
-                Submit any operational challenge and receive a severity-scored breakdown with
-                recommended action pathways — no setup, no friction.
+                Map operational bottlenecks, workflow failures, hidden load, and continuity risks.
               </p>
             </div>
 
