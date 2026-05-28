@@ -90,15 +90,26 @@ export default function ContactSection() {
               Whether you have a project in mind or just want to say hello — we&apos;d love to hear
               from you.
             </p>
-            <a
-              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1MFhJMv4bpopJ7sQu67y6v9JdmeNcisICg2nObR4FJNswY0VNWuS5IxEOWjAdSSGnTHNOvwdXp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-[#6c63ff] text-[#6c63ff] hover:bg-[#6c63ff] hover:text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
-            >
-              <CalendarDays size={17} />
-              Book a Free Consultation
-            </a>
+            <div className="flex flex-col sm:flex-row justify-center gap-3 max-w-2xl mx-auto">
+              <a
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1MFhJMv4bpopJ7sQu67y6v9JdmeNcisICg2nObR4FJNswY0VNWuS5IxEOWjAdSSGnTHNOvwdXp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-1 items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-[#6c63ff] text-[#6c63ff] hover:bg-[#6c63ff] hover:text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
+              >
+                <CalendarDays size={17} />
+                30 min Operational Analysis Consultation
+              </a>
+              <a
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1MFhJMv4bpopJ7sQu67y6v9JdmeNcisICg2nObR4FJNswY0VNWuS5IxEOWjAdSSGnTHNOvwdXp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-1 items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-[#6c63ff] text-[#6c63ff] hover:bg-[#6c63ff] hover:text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
+              >
+                <CalendarDays size={17} />
+                30 min Training Evaluation
+              </a>
+            </div>
           </div>
         </FadeUp>
 

@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, CalendarDays } from "lucide-react";
 import Image from "next/image";
 
 const slides = [
@@ -121,11 +121,33 @@ export default function HeroSection() {
         </p>
         <a
           href="https://operational-friction-map-service.vercel.app/"
+          target="_blank"
           className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#6c63ff] hover:bg-[#7c74ff] text-white font-semibold text-base transition-all duration-200 hover:shadow-2xl hover:shadow-[#6c63ff]/40 hover:-translate-y-0.5"
         >
           Run the Operational Friction Map™
           <ArrowRight size={18} />
         </a>
+
+        <div className="flex flex-col sm:flex-row justify-center gap-3 max-w-2xl mx-auto mt-4">
+          <a
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1MFhJMv4bpopJ7sQu67y6v9JdmeNcisICg2nObR4FJNswY0VNWuS5IxEOWjAdSSGnTHNOvwdXp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-1 items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-[#6c63ff] text-[#6c63ff] hover:bg-[#6c63ff] hover:text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
+          >
+            <CalendarDays size={17} />
+            30 min Operational Analysis Consultation
+          </a>
+          <a
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1MFhJMv4bpopJ7sQu67y6v9JdmeNcisICg2nObR4FJNswY0VNWuS5IxEOWjAdSSGnTHNOvwdXp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-1 items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-[#6c63ff] text-[#6c63ff] hover:bg-[#6c63ff] hover:text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-[#6c63ff]/25"
+          >
+            <CalendarDays size={17} />
+            30 min Training Evaluation
+          </a>
+        </div>
       </motion.div>
     </section>
   );
