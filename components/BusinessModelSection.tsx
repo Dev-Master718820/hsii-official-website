@@ -8,9 +8,9 @@ const steps = [
   {
     number: "01",
     icon: Search,
-    title: "Operational Analysis & Audit",
+    title: "Full Operational Audit",
     description:
-      "We identify where companies have workflow problems, backlog, hidden load, broken processes, or AI/system gaps.",
+      "Following the Friction Map diagnostic, we conduct a full audit — mapping every layer of workflow failure, backlog, and hidden human load to build a complete picture of where the system is breaking and why.",
     color: "#6c63ff",
   },
   {
@@ -18,15 +18,15 @@ const steps = [
     icon: RefreshCw,
     title: "Process Redesign",
     description:
-      "We redesign the workflow so the business can run better and stop wasting time, money, and human effort.",
+      "With friction mapped and severity scored, we redesign the workflow so the organization can stop wasting time, money, and human capacity — and start operating at the level it is already capable of.",
     color: "#a29bfe",
   },
   {
     number: "03",
     icon: Cpu,
-    title: "AI + Software Development",
+    title: "Systems Build",
     description:
-      "We lead the technical build: apps, automations, AI tools, dashboards, integrations, and systems that support the redesigned process.",
+      "We design and build the technical infrastructure the redesign calls for — apps, automations, AI tools, dashboards, and integrations that support the new process rather than fighting it.",
     color: "#74b9ff",
   },
   {
@@ -34,7 +34,7 @@ const steps = [
     icon: GraduationCap,
     title: "Training & Adoption",
     description:
-      "We train the team so the new system is actually used and the knowledge does not stay trapped in one person.",
+      "We train the team so the new system is actually used. Knowledge transfer, adoption support, and documentation — so continuity doesn't depend on a single person.",
     color: "#55efc4",
   },
 ];
@@ -68,29 +68,22 @@ export default function BusinessModelSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
-        {/* Explainer + Signature */}
+        {/* Explainer */}
         <FadeUp>
           <div className="max-w-3xl mb-20">
             <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
-              What We Do
+              After the Diagnostic
             </p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
-              We help organizations{" "}
+              The Friction Map identifies where the system is breaking.{" "}
               <span className="bg-gradient-to-r from-[#6c63ff] to-[#a29bfe] bg-clip-text text-transparent">
-                reduce operational friction
-              </span>{" "}
-              and build systems that sustain performance, continuity, and the people carrying the load.
+                These are how we fix it.
+              </span>
             </h2>
-
-            {/* Investor signature */}
-            <div
-              className="mt-8 pl-5 border-l-2 border-[#6c63ff]/40"
-            >
-              <p className="text-[var(--text-secondary)] text-base font-medium">Investor name</p>
-              <p className="text-[var(--text-muted)] text-sm mt-0.5">
-                investor sign
-              </p>
-            </div>
+            <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
+              Once friction is mapped and severity is scored, we translate findings into four clear
+              action pathways — each tied to a specific operational need.
+            </p>
           </div>
         </FadeUp>
 

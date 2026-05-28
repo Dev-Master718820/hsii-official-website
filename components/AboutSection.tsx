@@ -63,7 +63,7 @@ export default function AboutSection() {
         <FadeUp>
           <div className="max-w-3xl mb-20">
             <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
-              About HSII-SB
+              Who We Are
             </p>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
               Built for human systems,
@@ -73,11 +73,14 @@ export default function AboutSection() {
                 clarity.
               </span>
             </h2>
-            <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-              Human Systems Integration & Infrastructure™ (HSII™) Society's Backbone™ is a team
-              dedicated to operational clarity and sustainable performance. In partnership, we design
-              and engineer tools that help organizations understand, diagnose, and improve the systems
-              their people depend on every day.
+            <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-5">
+              HSII helps organizations identify where operational friction, backlog, and hidden human
+              load are weakening continuity — then translates that into redesign, systems support,
+              training, and adoption.
+            </p>
+            <p className="text-[var(--text-muted)] text-base leading-relaxed">
+              Our work is built on a simple belief: systems should sustain the people who run them,
+              not consume them.
             </p>
           </div>
         </FadeUp>

@@ -10,23 +10,23 @@ const FrictionOrb = dynamic(() => import("@/components/three/FrictionOrb"), { ss
 const features = [
   {
     icon: ScanSearch,
-    title: "Automated Classification",
+    title: "Describe the Problem",
     description:
-      "Describe any operational problem and the system instantly categorizes it into structured failure types — no manual triage required.",
+      "Tell the system what is breaking — a workflow failure, a backlog crisis, hidden load, a continuity risk. It structures and classifies your input instantly.",
     color: "#6c63ff",
   },
   {
     icon: Gauge,
-    title: "Severity Scoring",
+    title: "Map Severity & Risk",
     description:
-      "Every issue is assessed and scored for urgency, helping teams focus energy where it matters most instead of guessing at priorities.",
+      "Every friction point is scored for urgency and risk — so teams know where to act first instead of guessing at priorities or deferring the hardest problems.",
     color: "#a29bfe",
   },
   {
     icon: ArrowRightCircle,
-    title: "Action Pathways",
+    title: "Receive Action Pathways",
     description:
-      "Receive concrete recommended next steps tailored to each problem — so your team moves from diagnosis to resolution faster.",
+      "Get concrete, structured next steps matched to the type and severity of each operational failure — from quick fixes to redesign and systems support.",
     color: "#fd79a8",
   },
 ];
@@ -58,17 +58,16 @@ export default function FrictionMapSection() {
             {/* Text */}
             <div className="flex-1 max-w-2xl">
               <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
-                HSII-SB Operational Intelligence
+                The Diagnostic Tool · Start Here
               </p>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-                Introducing the{" "}
                 <span className="bg-gradient-to-r from-[#6c63ff] via-[#a29bfe] to-[#fd79a8] bg-clip-text text-transparent">
                   Operational Friction Map™
                 </span>
               </h2>
               <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-                A diagnostic tool that turns complex operational breakdowns into clear,
-                actionable intelligence. Describe the problem — get structured answers in seconds.
+                Describe the operational problem. Receive structure, severity, and action pathways —
+                so your organization knows exactly where to act and why.
               </p>
             </div>
 
@@ -115,9 +114,10 @@ export default function FrictionMapSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#6c63ff]/5 via-transparent to-[#fd79a8]/5 pointer-events-none" />
 
             <div className="relative">
-              <p className="text-lg font-semibold mb-1">Where is your system breaking?</p>
+              <p className="text-lg font-semibold mb-1">Run the diagnostic. Understand the system.</p>
               <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-lg">
-                Map operational bottlenecks, workflow failures, hidden load, and continuity risks.
+                Describe what is breaking — receive structure, severity scoring, and action pathways in seconds.
+                No setup required.
               </p>
             </div>
 
@@ -127,7 +127,7 @@ export default function FrictionMapSection() {
               rel="noopener noreferrer"
               className="relative shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#6c63ff] hover:bg-[#7c74ff] text-white font-semibold text-sm transition-all duration-200 hover:shadow-2xl hover:shadow-[#6c63ff]/30 hover:-translate-y-0.5"
             >
-              Launch the tool
+              Launch the Friction Map
               <ExternalLink size={15} />
             </a>
           </div>

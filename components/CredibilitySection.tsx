@@ -126,7 +126,7 @@ export default function CredibilitySection() {
               </span>
             </h2>
             <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-              HSII-SB is not a startup concept — it is built by people who have operated and engineered
+              This is not a startup concept — it is built by people who have operated and engineered
               at federal scale. The numbers below are not projections. They are work history.
             </p>
           </div>
@@ -241,7 +241,7 @@ export default function CredibilitySection() {
               </p>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
                 We have operated federal-scale systems and engineered the infrastructure to support them.
-                HSII-SB brings both sides of that equation to every engagement — so nothing gets lost in
+                We bring both sides of that equation to every engagement — so nothing gets lost in
                 translation between operations and technology.
               </p>
             </div>
