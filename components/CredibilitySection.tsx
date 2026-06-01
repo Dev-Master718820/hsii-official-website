@@ -35,7 +35,7 @@ const pavloStats = [
   {
     value: "AI‑Native",
     label: "AI-assisted workflow & tooling",
-    detail: "Designed and engineered AI-assisted operational tools, including the Operational Friction Map™ platform.",
+    detail: "Designed and engineered AI-assisted operational tools, including the Human-Tech Systems Audit™ platform.",
   },
   {
     value: "API + DB",
@@ -221,7 +221,7 @@ export default function CredibilitySection() {
               <span className="font-semibold" style={{ color: "var(--text-secondary)" }}>Context: </span>
               Senior Software Engineer with experience across the full development stack — frontend, backend,
               database architecture, and API integration. Builds AI-assisted operational tooling and enterprise
-              modernization systems. Currently leading technical development of the Operational Friction Map™
+              modernization systems. Currently leading technical development of the Human-Tech Systems Audit™
               platform and HSII-SB's broader infrastructure suite.
             </div>
           </FadeUp>

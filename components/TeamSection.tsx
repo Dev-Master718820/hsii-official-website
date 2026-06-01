@@ -22,7 +22,7 @@ const team = [
         "Her work combines systems thinking, operational analysis, enterprise modernization, and AI-assisted development to help organizations better understand where operational instability, hidden load, and structural friction emerge beneath surface-level performance metrics.",
       ],
       currentWork: [
-        "Operational Friction Map™ (OFM™)",
+        "Human-Tech Systems Audit™",
         "AI-assisted workflow modernization",
         "Operational analysis systems",
         "Enterprise process mapping",
@@ -60,7 +60,7 @@ const team = [
       paragraphs: [
         "His work centers on building practical infrastructure that improves usability, reduces operational friction, and supports long-term system maintainability. He has experience across frontend and backend development, enterprise workflows, API integrations, database architecture, and modern web technologies.",
         "Pavlo works closely with operational stakeholders to rapidly translate complex requirements into functional, maintainable systems. His engineering approach emphasizes clarity, scalability, adaptability, and real-world operational performance.",
-        "Current projects include operational analysis tooling, AI-assisted workflow systems, enterprise modernization initiatives, and the development of the Operational Friction Map™ platform as part of Human Systems Integration & Infrastructure (HSII™) Society's Backbone™.",
+        "Current projects include operational analysis tooling, AI-assisted workflow systems, enterprise modernization initiatives, and the development of the Human-Tech Systems Audit™ platform as part of Human Systems Integration & Infrastructure (HSII™) Society's Backbone™.",
       ],
       currentWork: [
         "Full Stack Development",

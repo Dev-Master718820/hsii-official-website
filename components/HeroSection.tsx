@@ -124,7 +124,7 @@ export default function HeroSection() {
           target="_blank"
           className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#6c63ff] hover:bg-[#7c74ff] text-white font-semibold text-base transition-all duration-200 hover:shadow-2xl hover:shadow-[#6c63ff]/40 hover:-translate-y-0.5"
         >
-          Run the Operational Friction Map™
+          Run the Human-Tech Systems Audit™
           <ArrowRight size={18} />
         </a>
 

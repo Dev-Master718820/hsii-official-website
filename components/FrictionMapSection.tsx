@@ -62,7 +62,7 @@ export default function FrictionMapSection() {
               </p>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
                 <span className="bg-gradient-to-r from-[#6c63ff] via-[#a29bfe] to-[#fd79a8] bg-clip-text text-transparent">
-                  Operational Friction Map™
+                  Human-Tech Systems Audit™
                 </span>
               </h2>
               <p className="text-[var(--text-secondary)] text-lg leading-relaxed">

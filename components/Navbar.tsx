@@ -8,7 +8,7 @@ import { useTheme } from "./ThemeProvider";
 
 const links = [
   { label: "Home", href: "/#home" },
-  { label: "Operational Friction Map", href: "/#friction-map" },
+  { label: "Human-Tech Systems Audit™", href: "/#friction-map" },
   { label: "What We Do", href: "/#what-we-do" },
   { label: "About", href: "/#about" },
   { label: "Team", href: "/#team" },
