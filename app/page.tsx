@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import IntakeSection from "@/components/IntakeSection";
 import FrictionMapSection from "@/components/FrictionMapSection";
 import BusinessModelSection from "@/components/BusinessModelSection";
 import AboutSection from "@/components/AboutSection";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <IntakeSection />
       <FrictionMapSection />
       <BusinessModelSection />
       <AboutSection />

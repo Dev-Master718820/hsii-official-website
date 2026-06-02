@@ -58,7 +58,7 @@ export default function FrictionMapSection() {
             {/* Text */}
             <div className="flex-1 max-w-2xl">
               <p className="text-[#6c63ff] text-sm font-semibold uppercase tracking-widest mb-4">
-                The Diagnostic Tool · Start Here
+                Operational Methodology
               </p>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
                 <span className="bg-gradient-to-r from-[#6c63ff] via-[#a29bfe] to-[#fd79a8] bg-clip-text text-transparent">

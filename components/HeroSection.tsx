@@ -120,11 +120,10 @@ export default function HeroSection() {
           performance without consuming the people who carry them.
         </p>
         <a
-          href="https://operational-friction-map-service.vercel.app/"
-          target="_blank"
+          href="#intake"
           className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#6c63ff] hover:bg-[#7c74ff] text-white font-semibold text-base transition-all duration-200 hover:shadow-2xl hover:shadow-[#6c63ff]/40 hover:-translate-y-0.5"
         >
-          Run the Human-Tech Systems Audit™
+          Start Your Human-Tech Systems Audit™
           <ArrowRight size={18} />
         </a>
 
