@@ -61,7 +61,6 @@ export default function IntakeSection() {
     try {
       const fd = new FormData();
       Object.entries(form).forEach(([k, v]) => fd.append(k, v));
-      files.forEach((f) => fd.append("docs", f));
 
       const data = await new Promise<{ error?: string }>((resolve, reject) => {
         const xhr = new XMLHttpRequest();
