@@ -8,6 +8,7 @@ import { useTheme } from "./ThemeProvider";
 
 const links = [
   { label: "Home", href: "/#home" },
+  { label: "Intake", href: "/#intake" },
   { label: "Human-Tech Systems Audit™", href: "/#friction-map" },
   { label: "What We Do", href: "/#what-we-do" },
   { label: "About", href: "/#about" },
