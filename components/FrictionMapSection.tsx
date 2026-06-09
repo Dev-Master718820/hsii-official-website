@@ -106,7 +106,7 @@ export default function FrictionMapSection() {
         </div>
 
         {/* CTA banner */}
-        <FadeUp delay={0.2}>
+        {/* <FadeUp delay={0.2}>
           <div
             className="relative rounded-2xl border bg-[var(--bg-surface)] overflow-hidden p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
             style={{ borderColor: "var(--border-color)" }}
@@ -131,7 +131,7 @@ export default function FrictionMapSection() {
               <ExternalLink size={15} />
             </a>
           </div>
-        </FadeUp>
+        </FadeUp> */}
       </div>
     </section>
   );
