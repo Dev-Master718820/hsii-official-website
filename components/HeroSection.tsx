@@ -113,11 +113,11 @@ export default function HeroSection() {
           </span>
         </h1>
         <p className="text-[var(--text-secondary)] text-lg md:text-xl leading-relaxed mb-4 max-w-2xl mx-auto">
-          Map operational bottlenecks, workflow failures, hidden load, and continuity risks.
+          Most operational failures begin long before anyone notices them.
         </p>
         <p className="text-[var(--text-muted)] text-base leading-relaxed mb-10 max-w-2xl mx-auto">
-          Identify operational friction, reduce invisible load, and build systems that sustain
-          performance without consuming the people who carry them.
+          Identify hidden load, workflow friction, continuity risks, and dependency points that quietly erode performance.
+          Build systems that sustain results without consuming the people who carry them.
         </p>
         <a
           href="#intake"
